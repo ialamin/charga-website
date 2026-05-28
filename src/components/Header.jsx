@@ -59,13 +59,20 @@ function Header({ onNavigate }) {
           <button
             className="header-menu-toggle"
             type="button"
-            aria-label="Toggle navigation menu"
+            aria-label="Open navigation menu"
             aria-expanded={isMobileMenuOpen}
             aria-controls="header-primary-nav"
             onClick={() => setIsMobileMenuOpen((previous) => !previous)}
           >
-            Menu
+            <span aria-hidden="true">☰</span>
           </button>
+          <a
+            className="header-quick-link"
+            href="/locations"
+            onClick={(event) => handleNavClick(event, 'locations', '/locations')}
+          >
+            Locations
+          </a>
           <nav className="header-nav" id="header-primary-nav" aria-label="Primary">
             <a
               className="header-nav-link"

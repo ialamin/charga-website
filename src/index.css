@@ -140,6 +140,10 @@ body {
   display: none;
 }
 
+.header-quick-link {
+  display: none;
+}
+
 .order-link {
   display: inline-flex;
   align-items: center;
@@ -204,16 +208,32 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.56rem 0.82rem;
+    padding: 0.56rem 0.72rem;
     border: 1px solid rgba(54, 42, 31, 0.2);
     border-radius: 0.45rem;
     background: rgba(255, 255, 255, 0.6);
     color: var(--text);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .header-quick-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.56rem 0.8rem;
+    border-radius: 0.45rem;
+    border: 1px solid rgba(54, 42, 31, 0.16);
+    background: rgba(255, 255, 255, 0.45);
+    color: var(--text);
+    text-decoration: none;
     font-size: 0.92rem;
     font-weight: 500;
     letter-spacing: 0.01em;
     line-height: 1;
-    cursor: pointer;
+    white-space: nowrap;
   }
 
   .header-nav {
@@ -898,6 +918,7 @@ main {
   }
 
   .header-menu-toggle,
+  .header-quick-link,
   .order-link {
     padding: 0.5rem 0.68rem;
     font-size: 0.84rem;
