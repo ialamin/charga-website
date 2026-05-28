@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 
 const SCROLL_COMPACT_THRESHOLD = 48
+const MOBILE_NAV_BREAKPOINT = 900
 
 function Header({ onNavigate }) {
   const [isCompact, setIsCompact] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     let ticking = false
@@ -25,8 +27,20 @@ function Header({ onNavigate }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > MOBILE_NAV_BREAKPOINT) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   const handleNavClick = (event, page, path) => {
     event.preventDefault()
+    setIsMobileMenuOpen(false)
     onNavigate?.(page, path)
   }
 
@@ -41,8 +55,18 @@ function Header({ onNavigate }) {
           <img className="site-logo" src="/images/logo.png" alt="Charga" />
         </a>
 
-        <div className="header-nav-cluster">
-          <nav className="header-nav" aria-label="Primary">
+        <div className={`header-nav-cluster${isMobileMenuOpen ? ' header-nav-cluster--open' : ''}`}>
+          <button
+            className="header-menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="header-primary-nav"
+            onClick={() => setIsMobileMenuOpen((previous) => !previous)}
+          >
+            Menu
+          </button>
+          <nav className="header-nav" id="header-primary-nav" aria-label="Primary">
             <a
               className="header-nav-link"
               href="/menu"
@@ -58,7 +82,7 @@ function Header({ onNavigate }) {
               Locations
             </a>
           </nav>
-          <a className="order-link" href="#order">
+          <a className="order-link" href="#order" onClick={() => setIsMobileMenuOpen(false)}>
             Order Online
           </a>
         </div>
