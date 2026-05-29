@@ -5,7 +5,7 @@ const highlights = [
     position: 'center 42%',
   },
   {
-    name: 'Chili Momos',
+    name: 'Charga',
     image: '/images/highlight-momos.jpg',
     position: 'center 55%',
   },
