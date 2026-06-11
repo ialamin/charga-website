@@ -144,6 +144,36 @@ body {
   display: none;
 }
 
+.header-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.catering-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.2rem;
+  border: 1px solid rgba(54, 42, 31, 0.22);
+  border-radius: 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: 0.012em;
+  color: var(--text);
+  background: var(--surface);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.22s ease, padding 0.4s ease, font-size 0.4s ease;
+}
+
+.site-header--compact .catering-link {
+  padding: 0.62rem 1rem;
+  font-size: 0.96875rem;
+}
+
 .order-link {
   display: inline-flex;
   align-items: center;
@@ -270,6 +300,11 @@ body {
 
   .order-link {
     padding: 0.56rem 0.82rem;
+    font-size: 0.92rem;
+  }
+
+  .catering-link {
+    padding: 0.56rem 0.75rem;
     font-size: 0.92rem;
   }
 
@@ -491,7 +526,8 @@ main {
 }
 
 .location-directions-link,
-.location-order-link {
+.location-order-link,
+.location-catering-link {
   display: inline-block;
   text-decoration: none;
   font-weight: 600;
@@ -508,6 +544,12 @@ main {
 .location-order-link {
   color: #fff;
   background: var(--primary);
+}
+
+.location-catering-link {
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .about-page {
@@ -590,6 +632,14 @@ main {
   margin-top: 1.75rem;
 }
 
+@media (min-width: 480px) {
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 .hero-primary {
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -605,6 +655,17 @@ main {
   color: var(--text);
   text-decoration: underline;
   text-underline-offset: 0.15em;
+}
+
+.hero-secondary-button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0.5rem;
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .hero-trust {
@@ -1071,6 +1132,13 @@ body {
 .visit-us-link:hover,
 .location-order-link:hover {
   background: var(--primary-hover);
+}
+
+.catering-link:hover,
+.hero-secondary-button:hover,
+.location-catering-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .hero-subtitle,

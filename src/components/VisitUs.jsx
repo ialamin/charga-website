@@ -1,4 +1,8 @@
+import siteConfig from '../siteConfig'
+
 function VisitUs() {
+  const { visitUs } = siteConfig
+
   return (
     <section className="visit-us" aria-labelledby="visit-us-heading">
       <div className="visit-us-card">
@@ -7,14 +11,14 @@ function VisitUs() {
             Visit Charga
           </h2>
           <p className="visit-us-address">
-            3203 Columbia Pike
+            {visitUs.line1}
             <br />
-            Arlington, VA 22204
+            {visitUs.line2}
           </p>
           <p className="visit-us-hours">Open 7 days a week</p>
           <a
             className="visit-us-link"
-            href="https://www.google.com/maps/dir/?api=1&destination=3203%20Columbia%20Pike%2C%20Arlington%2C%20VA%2022204"
+            href={visitUs.directionsHref}
             target="_blank"
             rel="noreferrer"
           >
@@ -24,7 +28,7 @@ function VisitUs() {
         <iframe
           className="visit-us-map"
           title="Map to Charga in Arlington, VA"
-          src="https://www.google.com/maps?q=3203%20Columbia%20Pike%2C%20Arlington%2C%20VA%2022204&output=embed"
+          src={`https://www.google.com/maps?q=${visitUs.mapQuery}&output=embed`}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />

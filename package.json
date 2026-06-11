@@ -4,8 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --mode pike",
+    "dev:pike": "vite --mode pike",
+    "dev:grill": "vite --mode grill",
+    "build": "vite build --mode pike",
+    "build:pike": "vite build --mode pike",
+    "build:grill": "vite build --mode grill",
     "lint": "eslint .",
     "preview": "vite preview"
   },

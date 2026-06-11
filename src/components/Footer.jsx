@@ -1,3 +1,5 @@
+import siteConfig from '../siteConfig'
+
 function Footer({ onNavigate }) {
   return (
     <footer className="site-footer">
@@ -19,9 +21,19 @@ function Footer({ onNavigate }) {
         <button type="button" className="footer-link-button" onClick={() => onNavigate?.('about')}>
           About
         </button>
-        <a className="footer-link-anchor" href="#order">
+        <a className="footer-link-anchor" href={siteConfig.orderUrl} target="_blank" rel="noreferrer">
           Order
         </a>
+        {siteConfig.cateringUrl ? (
+          <a
+            className="footer-link-anchor"
+            href={siteConfig.cateringUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Catering
+          </a>
+        ) : null}
         <a className="footer-link-anchor" href="#" target="_blank" rel="noreferrer">
           Instagram
         </a>

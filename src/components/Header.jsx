@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import siteConfig from '../siteConfig'
 
 const SCROLL_COMPACT_THRESHOLD = 48
 const MOBILE_NAV_BREAKPOINT = 900
@@ -89,9 +90,28 @@ function Header({ onNavigate }) {
               Locations
             </a>
           </nav>
-          <a className="order-link" href="#order" onClick={() => setIsMobileMenuOpen(false)}>
-            Order Online
-          </a>
+          <div className="header-cta-group">
+            {siteConfig.cateringUrl ? (
+              <a
+                className="catering-link"
+                href={siteConfig.cateringUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Catering
+              </a>
+            ) : null}
+            <a
+              className="order-link"
+              href={siteConfig.orderUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Order Online
+            </a>
+          </div>
         </div>
       </div>
     </header>

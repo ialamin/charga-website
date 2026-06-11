@@ -1,3 +1,5 @@
+import { GRILL_CATERING_URL, GRILL_ORDER_URL, PIKE_ORDER_URL } from '../constants'
+
 const locations = [
   {
     name: 'Charga Grill',
@@ -6,6 +8,8 @@ const locations = [
     directionsHref:
       'https://www.google.com/maps/dir/?api=1&destination=5151%20Langston%20Boulevard%2C%20Arlington%2C%20VA%2022207',
     orderLabel: 'Order from Charga Grill',
+    orderHref: GRILL_ORDER_URL,
+    cateringHref: GRILL_CATERING_URL,
   },
   {
     name: 'Charga On The Pike',
@@ -14,6 +18,7 @@ const locations = [
     directionsHref:
       'https://www.google.com/maps/dir/?api=1&destination=3203%20Columbia%20Pike%2C%20Arlington%2C%20VA%2022204',
     orderLabel: 'Order from Columbia Pike',
+    orderHref: PIKE_ORDER_URL,
   },
 ]
 
@@ -51,9 +56,24 @@ function Locations() {
               >
                 Get Directions
               </a>
-              <a className="location-order-link" href="#">
+              <a
+                className="location-order-link"
+                href={location.orderHref ?? '#'}
+                target={location.orderHref ? '_blank' : undefined}
+                rel={location.orderHref ? 'noreferrer' : undefined}
+              >
                 {location.orderLabel}
               </a>
+              {location.cateringHref ? (
+                <a
+                  className="location-catering-link"
+                  href={location.cateringHref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Catering
+                </a>
+              ) : null}
             </div>
           </article>
         ))}
