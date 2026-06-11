@@ -57,7 +57,7 @@ function App() {
         ) : activePage === 'menu' ? (
           <Menu />
         ) : activePage === 'locations' ? (
-          <Locations />
+          <Locations onNavigate={handleNavigate} />
         ) : (
           <About />
         )}

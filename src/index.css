@@ -87,6 +87,10 @@ body {
   height: 78px;
 }
 
+.site-logo--grill {
+  border-radius: 50%;
+}
+
 .site-logo-link:hover .site-logo {
   transform: scale(1.03);
 }
@@ -174,10 +178,12 @@ body {
   font-size: 0.96875rem;
 }
 
-.order-link {
+.order-link,
+button.order-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.35rem;
   padding: 0.78rem 1.45rem;
   border: none;
   border-radius: 0.5rem;
@@ -190,6 +196,52 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
   transition: background 0.22s ease, padding 0.4s ease, font-size 0.4s ease;
+}
+
+.order-dropdown {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.order-dropdown-trigger {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.order-dropdown-chevron {
+  font-size: 0.75em;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.order-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  z-index: 1002;
+  min-width: 11.5rem;
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgba(28, 22, 18, 0.12);
+}
+
+.order-dropdown-option {
+  display: block;
+  padding: 0.62rem 0.75rem;
+  border-radius: 0.4rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.order-dropdown-option:hover {
+  background: rgba(196, 30, 58, 0.08);
+  color: var(--primary);
 }
 
 .site-header--compact .order-link {
@@ -506,6 +558,19 @@ main {
   line-height: 1.45;
 }
 
+.location-website-link {
+  display: inline-block;
+  margin-top: 0.45rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.location-website-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
 .location-hours {
   margin: 0.6rem 0 0;
   line-height: 1.45;
@@ -525,9 +590,8 @@ main {
   padding-top: 1.1rem;
 }
 
-.location-directions-link,
-.location-order-link,
-.location-catering-link {
+.location-menu-link,
+.location-order-link {
   display: inline-block;
   text-decoration: none;
   font-weight: 600;
@@ -535,7 +599,7 @@ main {
   padding: 0.55rem 0.9rem;
 }
 
-.location-directions-link {
+.location-menu-link {
   color: var(--text);
   border: 1px solid var(--border);
   background: var(--surface);
@@ -544,12 +608,7 @@ main {
 .location-order-link {
   color: #fff;
   background: var(--primary);
-}
-
-.location-catering-link {
-  color: var(--text);
-  border: 1px solid var(--border);
-  background: var(--surface);
+  border: 1px solid var(--primary);
 }
 
 .about-page {
@@ -640,8 +699,12 @@ main {
   }
 }
 
-.hero-primary {
-  display: inline-block;
+.hero-primary,
+button.hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   padding: 0.6rem 1rem;
   border: none;
   border-radius: 0.5rem;
@@ -649,6 +712,9 @@ main {
   background: var(--primary);
   text-decoration: none;
   font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .hero-secondary {
@@ -1127,8 +1193,16 @@ body {
   border: none;
 }
 
+button.hero-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
 .order-link:hover,
+button.order-link:hover,
 .hero-primary:hover,
+button.hero-primary:hover,
 .visit-us-link:hover,
 .location-order-link:hover {
   background: var(--primary-hover);
@@ -1136,7 +1210,7 @@ body {
 
 .catering-link:hover,
 .hero-secondary-button:hover,
-.location-catering-link:hover {
+.location-menu-link:hover {
   border-color: var(--primary);
   color: var(--primary);
 }

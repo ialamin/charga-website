@@ -1,4 +1,5 @@
 import siteConfig from '../siteConfig'
+import OrderDropdown from './OrderDropdown.jsx'
 
 function Hero() {
   return (
@@ -11,9 +12,7 @@ function Hero() {
           fresh daily.
         </p>
         <div className="hero-actions">
-          <a className="hero-primary" href={siteConfig.orderUrl} target="_blank" rel="noreferrer">
-            Order Online
-          </a>
+          <OrderDropdown label="Order Online" className="hero-primary" />
           {siteConfig.cateringUrl ? (
             <a
               className="hero-secondary-button"

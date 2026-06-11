@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import siteConfig from '../siteConfig'
+import OrderDropdown from './OrderDropdown.jsx'
 
 const SCROLL_COMPACT_THRESHOLD = 48
 const MOBILE_NAV_BREAKPOINT = 900
@@ -53,7 +54,11 @@ function Header({ onNavigate }) {
           href="/"
           onClick={(event) => handleNavClick(event, 'home', '/')}
         >
-          <img className="site-logo" src="/images/logo.png" alt="Charga" />
+          <img
+            className={`site-logo${siteConfig.id === 'grill' ? ' site-logo--grill' : ''}`}
+            src={siteConfig.logoSrc}
+            alt={siteConfig.logoAlt}
+          />
         </a>
 
         <div className={`header-nav-cluster${isMobileMenuOpen ? ' header-nav-cluster--open' : ''}`}>
@@ -102,15 +107,11 @@ function Header({ onNavigate }) {
                 Catering
               </a>
             ) : null}
-            <a
+            <OrderDropdown
+              label="Order Online"
               className="order-link"
-              href={siteConfig.orderUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Order Online
-            </a>
+              onSelect={() => setIsMobileMenuOpen(false)}
+            />
           </div>
         </div>
       </div>

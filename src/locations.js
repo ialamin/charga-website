@@ -1,0 +1,38 @@
+import {
+  GRILL_ORDER_URL,
+  GRILL_WEBSITE_URL,
+  PIKE_ORDER_URL,
+  PIKE_WEBSITE_URL,
+} from './constants'
+
+export const locations = [
+  {
+    id: 'grill',
+    name: 'Charga Grill',
+    addressLine1: '5151 Langston Boulevard',
+    addressLine2: 'Arlington, VA 22207',
+    websiteUrl: GRILL_WEBSITE_URL,
+    orderLabel: 'Order',
+  },
+  {
+    id: 'pike',
+    name: 'Charga On The Pike',
+    addressLine1: '3203 Columbia Pike',
+    addressLine2: 'Arlington, VA 22204',
+    websiteUrl: PIKE_WEBSITE_URL,
+    orderLabel: 'Order',
+  },
+]
+
+export const getLocationOrderUrl = (locationId) =>
+  locationId === 'grill' ? GRILL_ORDER_URL : PIKE_ORDER_URL
+
+export const orderOptions = [
+  { id: 'pike', label: 'Columbia Pike', orderUrl: PIKE_ORDER_URL },
+  { id: 'grill', label: 'Langston Boulevard', orderUrl: GRILL_ORDER_URL },
+]
+
+export const getLocationMenuHref = (locationId, websiteUrl) => `${websiteUrl}/menu`
+
+export const getWebsiteLabel = (websiteUrl) =>
+  websiteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')

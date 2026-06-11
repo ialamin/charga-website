@@ -1,4 +1,5 @@
 import siteConfig from '../siteConfig'
+import OrderDropdown from './OrderDropdown.jsx'
 
 function Footer({ onNavigate }) {
   return (
@@ -21,9 +22,7 @@ function Footer({ onNavigate }) {
         <button type="button" className="footer-link-button" onClick={() => onNavigate?.('about')}>
           About
         </button>
-        <a className="footer-link-anchor" href={siteConfig.orderUrl} target="_blank" rel="noreferrer">
-          Order
-        </a>
+        <OrderDropdown label="Order" className="footer-link-button" />
         {siteConfig.cateringUrl ? (
           <a
             className="footer-link-anchor"

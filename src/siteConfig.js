@@ -9,6 +9,8 @@ const sites = {
     id: 'pike',
     orderUrl: PIKE_ORDER_URL,
     cateringUrl: null,
+    logoSrc: '/images/logo.png',
+    logoAlt: 'Charga',
     heroEyebrow: 'Arlington, VA • Columbia Pike',
     visitUs: {
       line1: '3203 Columbia Pike',
@@ -22,6 +24,8 @@ const sites = {
     id: 'grill',
     orderUrl: GRILL_ORDER_URL,
     cateringUrl: GRILL_CATERING_URL,
+    logoSrc: '/images/logo-grill.png',
+    logoAlt: 'Charga Grill',
     heroEyebrow: 'Arlington, VA • Langston Blvd',
     visitUs: {
       line1: '5151 Langston Boulevard',

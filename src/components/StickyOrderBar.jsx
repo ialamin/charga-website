@@ -1,11 +1,9 @@
-import siteConfig from '../siteConfig'
+import OrderDropdown from './OrderDropdown.jsx'
 
 function StickyOrderBar() {
   return (
     <div className="sticky-order-bar">
-      <a className="sticky-order-button" href={siteConfig.orderUrl} target="_blank" rel="noreferrer">
-        Order Online
-      </a>
+      <OrderDropdown label="Order Online" className="sticky-order-button" />
     </div>
   )
 }
