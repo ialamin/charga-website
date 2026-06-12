@@ -19,12 +19,9 @@ const sites = {
     pageTitle: 'Charga On The Pike | Pakistani & Indian Food in Arlington VA',
     metaDescription:
       'Charga On The Pike serves Pakistani and Indian street food in Arlington, VA. Kabobs, chopped cheese, chili momos, and tandoor-fired favorites on Columbia Pike.',
-    heroEyebrow: 'Arlington, VA • Columbia Pike',
-    heroTitle: 'Pakistani & Indian Street Food in Arlington',
+    heroTitle: 'Pakistani & Indian Street Food',
     heroImage: '/images/hero.jpg',
     heroImagePosition: 'center 44%',
-    heroSubtitle:
-      'Kabobs, chopped cheese, chili momos, and tandoor-fired favorites made fresh daily.',
     followAlongText: 'Food, stories, and life on Columbia Pike.',
     footerBrand: 'Charga On The Pike',
     footerDescription: 'Pakistani & Indian street food on Columbia Pike in Arlington, VA.',
@@ -57,12 +54,9 @@ const sites = {
     pageTitle: 'Charga Grill | Halal Grill & Street Food in Arlington VA',
     metaDescription:
       'Charga Grill on Langston Blvd serves halal grill chicken, kabobs, and global street food favorites in Arlington, VA. Order online or explore catering.',
-    heroEyebrow: 'Arlington, VA • Langston Blvd',
-    heroTitle: 'Halal Grill & Street Food in Arlington',
+    heroTitle: 'Halal Grill & Street Food',
     heroImage: '/images/hero.jpg',
     heroImagePosition: 'center 38%',
-    heroSubtitle:
-      'Halal grill chicken, kabobs, and street food favorites fired over charcoal and made fresh daily.',
     followAlongText: 'Food, stories, and life on Langston Blvd.',
     footerBrand: 'Charga Grill',
     footerDescription: 'Halal grill and street food on Langston Blvd in Arlington, VA.',

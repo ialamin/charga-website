@@ -12,9 +12,7 @@ function Hero() {
       }}
     >
       <div className="hero-content">
-        <p className="hero-eyebrow">{siteConfig.heroEyebrow}</p>
         <h1 className="hero-title">{siteConfig.heroTitle}</h1>
-        <p className="hero-subtitle">{siteConfig.heroSubtitle}</p>
         <div className="hero-actions">
           <OrderDropdown label="Order Online" className="hero-primary" />
           {siteConfig.cateringUrl ? (

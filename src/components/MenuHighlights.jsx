@@ -22,7 +22,7 @@ function MenuHighlights() {
       <div className="menu-highlights">
         <div className="section-header menu-highlights-copy">
           <span className="section-accent" aria-hidden="true"></span>
-          <h2 id="menu-highlights-heading" className="section-title section-title--inverse">
+          <h2 id="menu-highlights-heading" className="section-title">
             Favorites
           </h2>
         </div>
