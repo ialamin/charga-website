@@ -19,7 +19,7 @@ function Locations({ onNavigate }) {
   return (
     <section className="locations-page" aria-labelledby="locations-page-heading">
       <header className="locations-page-header">
-        <h1 id="locations-page-heading" className="locations-page-title">
+        <h1 id="locations-page-heading" className="page-title">
           Locations
         </h1>
         <p className="locations-page-intro">Find your nearest Charga.</p>
@@ -47,11 +47,18 @@ function Locations({ onNavigate }) {
                 {getWebsiteLabel(location.websiteUrl)}
               </a>
               <p className="location-hours">
-                Mon - Sat: 11 AM - 9 PM
-                <br />
-                Sun: 12 PM - 9 PM
+                {location.hoursLines.map((line) => (
+                  <span key={line}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
               </p>
-              <p className="location-phone">(703) XXX-XXXX</p>
+              <p className="location-phone">
+                <a className="location-phone-link" href={location.phoneHref}>
+                  {location.phoneDisplay}
+                </a>
+              </p>
               <div className="location-actions">
                 <a
                   className="location-menu-link"

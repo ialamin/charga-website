@@ -20,30 +20,27 @@ function MenuHighlights() {
   return (
     <section id="menu" className="menu-highlights-band" aria-labelledby="menu-highlights-heading">
       <div className="menu-highlights">
-        <div className="menu-highlights-copy">
-          <h2 id="menu-highlights-heading" className="menu-highlights-title">
+        <div className="section-header menu-highlights-copy">
+          <span className="section-accent" aria-hidden="true"></span>
+          <h2 id="menu-highlights-heading" className="section-title section-title--inverse">
             Favorites
           </h2>
         </div>
 
         <div className="menu-highlights-tiles">
           {highlights.map((item) => (
-            <article
-              className="menu-highlight-tile"
-              key={item.name}
-              style={{
-                '--tile-image': `url(${item.image})`,
-                '--tile-position': item.position,
-              }}
-            >
-              <img
-                className="menu-highlight-image"
-                src={item.image}
-                alt={item.name}
-                loading="lazy"
-                style={{ objectPosition: item.position }}
-              />
-              <h3 className="menu-highlight-name">{item.name}</h3>
+            <article className="menu-highlight-tile" key={item.name}>
+              <div className="menu-highlight-media">
+                <img
+                  className="menu-highlight-image"
+                  src={item.image}
+                  alt={item.name}
+                  loading="lazy"
+                  style={{ objectPosition: item.position }}
+                />
+                <div className="menu-highlight-overlay" aria-hidden="true"></div>
+                <h3 className="menu-highlight-name">{item.name}</h3>
+              </div>
             </article>
           ))}
         </div>

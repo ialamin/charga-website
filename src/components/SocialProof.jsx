@@ -1,9 +1,12 @@
 function SocialProof() {
   return (
     <section className="social-proof" aria-labelledby="social-proof-heading">
-      <h2 id="social-proof-heading" className="section-title">
-        Loved by Locals
-      </h2>
+      <div className="section-header">
+        <span className="section-accent" aria-hidden="true"></span>
+        <h2 id="social-proof-heading" className="section-title">
+          Loved by Locals
+        </h2>
+      </div>
       <div className="social-proof-grid">
         <article className="review-card">
           <p className="review-stars" aria-label="5 out of 5 stars">

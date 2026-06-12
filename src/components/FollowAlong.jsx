@@ -1,13 +1,21 @@
+import siteConfig from '../siteConfig'
+
 function FollowAlong() {
   return (
     <section className="follow-along" aria-labelledby="follow-along-heading">
-      <h2 id="follow-along-heading" className="section-title">
-        Follow Along
-      </h2>
-      <p className="follow-along-text">Food, stories, and life on Columbia Pike.</p>
+      <div className="section-header">
+        <span className="section-accent" aria-hidden="true"></span>
+        <h2 id="follow-along-heading" className="section-title">
+          Follow Along
+        </h2>
+      </div>
+      <p className="follow-along-text">{siteConfig.followAlongText}</p>
       <div className="follow-along-links">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
+        {siteConfig.socialLinks.map((link) => (
+          <a href={link.href} key={link.label} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+        ))}
       </div>
     </section>
   )

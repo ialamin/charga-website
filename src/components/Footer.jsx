@@ -4,10 +4,8 @@ import OrderDropdown from './OrderDropdown.jsx'
 function Footer({ onNavigate }) {
   return (
     <footer className="site-footer">
-      <p className="footer-brand">Charga</p>
-      <p className="footer-description">
-        Pakistani & Indian street food in Arlington, VA.
-      </p>
+      <p className="footer-brand">{siteConfig.footerBrand}</p>
+      <p className="footer-description">{siteConfig.footerDescription}</p>
       <nav className="footer-links" aria-label="Footer links">
         <button type="button" className="footer-link-button" onClick={() => onNavigate?.('menu')}>
           Menu
@@ -33,12 +31,17 @@ function Footer({ onNavigate }) {
             Catering
           </a>
         ) : null}
-        <a className="footer-link-anchor" href="#" target="_blank" rel="noreferrer">
-          Instagram
-        </a>
-        <a className="footer-link-anchor" href="#" target="_blank" rel="noreferrer">
-          TikTok
-        </a>
+        {siteConfig.socialLinks.map((link) => (
+          <a
+            className="footer-link-anchor"
+            href={link.href}
+            key={link.label}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {link.label}
+          </a>
+        ))}
       </nav>
       <p className="footer-copyright">© 2026 Charga. All rights reserved.</p>
     </footer>
