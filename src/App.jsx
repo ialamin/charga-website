@@ -26,6 +26,8 @@ function App() {
   }
 
   const [activePage, setActivePage] = useState(() => getPageFromPath(window.location.pathname))
+  const [mobileOrderDockProgress, setMobileOrderDockProgress] = useState(0)
+  const isHome = activePage === 'home'
 
   const handleNavigate = (page, path) => {
     const nextPage = page ?? getPageFromPath(path ?? window.location.pathname)
@@ -37,6 +39,12 @@ function App() {
   }
 
   useEffect(() => {
+    if (isHome) {
+      setMobileOrderDockProgress(0)
+    }
+  }, [isHome])
+
+  useEffect(() => {
     const onPopState = () => setActivePage(getPageFromPath(window.location.pathname))
     window.addEventListener('popstate', onPopState)
     return () => window.removeEventListener('popstate', onPopState)
@@ -44,11 +52,14 @@ function App() {
 
   return (
     <>
-      <Header onNavigate={handleNavigate} />
+      <Header
+        onNavigate={handleNavigate}
+        mobileOrderDockProgress={isHome ? mobileOrderDockProgress : 1}
+      />
       <main>
         {activePage === 'home' ? (
           <>
-            <Hero />
+            <Hero onMobileOrderDockProgressChange={setMobileOrderDockProgress} />
             <MenuHighlights />
             <SocialProof />
             <VisitUs />

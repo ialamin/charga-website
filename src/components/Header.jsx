@@ -5,14 +5,16 @@ import OrderDropdown from './OrderDropdown.jsx'
 const SCROLL_COMPACT_THRESHOLD = 48
 const MOBILE_NAV_BREAKPOINT = 900
 
-function Header({ onNavigate }) {
+function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
+  const [isScrolled, setIsScrolled] = useState(false)
   const [isCompact, setIsCompact] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     let ticking = false
 
-    const updateCompact = () => {
+    const updateScrollState = () => {
+      setIsScrolled(window.scrollY > 12)
       setIsCompact(window.scrollY > SCROLL_COMPACT_THRESHOLD)
       ticking = false
     }
@@ -20,11 +22,11 @@ function Header({ onNavigate }) {
     const onScroll = () => {
       if (!ticking) {
         ticking = true
-        requestAnimationFrame(updateCompact)
+        requestAnimationFrame(updateScrollState)
       }
     }
 
-    updateCompact()
+    updateScrollState()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -47,7 +49,9 @@ function Header({ onNavigate }) {
   }
 
   return (
-    <header className={`site-header${isCompact ? ' site-header--compact' : ''}`}>
+    <header
+      className={`site-header${isScrolled ? ' site-header--scrolled' : ''}${isCompact ? ' site-header--compact' : ''}`}
+    >
       <div className="site-header-inner">
         <a
           className="site-logo-link"
@@ -61,7 +65,10 @@ function Header({ onNavigate }) {
           />
         </a>
 
-        <div className={`header-nav-cluster${isMobileMenuOpen ? ' header-nav-cluster--open' : ''}`}>
+        <div
+          className={`header-nav-cluster${isMobileMenuOpen ? ' header-nav-cluster--open' : ''}`}
+          style={{ '--order-dock-progress': mobileOrderDockProgress }}
+        >
           <button
             className="header-menu-toggle"
             type="button"
@@ -99,7 +106,11 @@ function Header({ onNavigate }) {
               </a>
             ) : null}
           </nav>
-          <div className="header-cta-group">
+          <div
+            className="header-cta-group"
+            aria-hidden={mobileOrderDockProgress < 0.35}
+            style={{ pointerEvents: mobileOrderDockProgress > 0.35 ? 'auto' : 'none' }}
+          >
             {siteConfig.cateringUrl ? (
               <a
                 className="catering-link"
