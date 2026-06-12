@@ -1,7 +1,12 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { orderOptions } from '../locations'
 
-function OrderDropdown({ label = 'Order Online', className = 'order-link', onSelect }) {
+function OrderDropdown({
+  label = 'Order Online',
+  shortLabel = 'Order',
+  className = 'order-link',
+  onSelect,
+}) {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef(null)
   const menuId = useId()
@@ -49,12 +54,16 @@ function OrderDropdown({ label = 'Order Online', className = 'order-link', onSel
       <button
         type="button"
         className={`order-dropdown-trigger ${className}`}
+        aria-label={label}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-controls={menuId}
         onClick={() => setOpen(!isOpen)}
       >
-        {label}
+        <span className="order-dropdown-label order-dropdown-label--full">{label}</span>
+        <span className="order-dropdown-label order-dropdown-label--short" aria-hidden="true">
+          {shortLabel}
+        </span>
         <span className="order-dropdown-chevron" aria-hidden="true">
           ▾
         </span>

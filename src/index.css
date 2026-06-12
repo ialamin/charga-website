@@ -105,6 +105,7 @@ body {
   justify-content: space-between;
   gap: clamp(2rem, 7vw, 5.5rem);
   width: 100%;
+  min-width: 0;
 }
 
 .site-logo-link {
@@ -139,7 +140,8 @@ body {
 .header-nav-cluster {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   gap: clamp(1.15rem, 2.8vw, 1.85rem);
   margin-top: 0.35rem;
   margin-left: auto;
@@ -185,7 +187,7 @@ body {
   display: none;
 }
 
-.header-quick-link {
+.header-nav-catering {
   display: none;
 }
 
@@ -247,6 +249,10 @@ button.order-link {
 .order-dropdown-trigger {
   cursor: pointer;
   font-family: inherit;
+}
+
+.order-dropdown-label--short {
+  display: none;
 }
 
 .order-dropdown-chevron {
@@ -318,9 +324,10 @@ button.order-link {
 
   .header-nav-cluster {
     position: relative;
-    gap: 0.5rem;
+    gap: 0.4rem;
     padding: 0.35rem;
     border-radius: 0.62rem;
+    overflow: visible;
   }
 
   .site-header--compact .header-nav-cluster {
@@ -331,7 +338,10 @@ button.order-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.56rem 0.72rem;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
     border: 1px solid rgba(54, 42, 31, 0.2);
     border-radius: 0.45rem;
     background: rgba(255, 255, 255, 0.6);
@@ -342,21 +352,12 @@ button.order-link {
     cursor: pointer;
   }
 
-  .header-quick-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.56rem 0.8rem;
-    border-radius: 0.45rem;
-    border: 1px solid rgba(54, 42, 31, 0.16);
-    background: rgba(255, 255, 255, 0.45);
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    line-height: 1;
-    white-space: nowrap;
+  .header-nav-catering {
+    display: block;
+  }
+
+  .header-cta-group .catering-link {
+    display: none;
   }
 
   .header-nav {
@@ -391,17 +392,22 @@ button.order-link {
     font-size: 0.92rem;
   }
 
-  .order-link {
+  .order-link,
+  button.order-link {
     padding: 0.56rem 0.82rem;
     font-size: 0.92rem;
   }
 
-  .catering-link {
-    padding: 0.56rem 0.75rem;
-    font-size: 0.92rem;
+  .order-dropdown-label--full {
+    display: none;
   }
 
-  .site-header--compact .order-link {
+  .order-dropdown-label--short {
+    display: inline;
+  }
+
+  .site-header--compact .order-link,
+  .site-header--compact button.order-link {
     padding: 0.52rem 0.78rem;
     font-size: 0.88rem;
   }
@@ -1054,14 +1060,19 @@ button.hero-primary {
   }
 
   .header-nav-cluster {
-    gap: 0.35rem;
+    gap: 0.3rem;
     padding: 0.26rem;
   }
 
-  .header-menu-toggle,
-  .header-quick-link,
-  .order-link {
-    padding: 0.5rem 0.68rem;
+  .header-menu-toggle {
+    width: 2.35rem;
+    height: 2.35rem;
+    font-size: 0.95rem;
+  }
+
+  .order-link,
+  button.order-link {
+    padding: 0.5rem 0.65rem;
     font-size: 0.84rem;
   }
 

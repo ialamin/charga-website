@@ -65,20 +65,13 @@ function Header({ onNavigate }) {
           <button
             className="header-menu-toggle"
             type="button"
-            aria-label="Open navigation menu"
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="header-primary-nav"
             onClick={() => setIsMobileMenuOpen((previous) => !previous)}
           >
-            <span aria-hidden="true">☰</span>
+            <span aria-hidden="true">{isMobileMenuOpen ? '✕' : '☰'}</span>
           </button>
-          <a
-            className="header-quick-link"
-            href="/locations"
-            onClick={(event) => handleNavClick(event, 'locations', '/locations')}
-          >
-            Locations
-          </a>
           <nav className="header-nav" id="header-primary-nav" aria-label="Primary">
             <a
               className="header-nav-link"
@@ -94,6 +87,17 @@ function Header({ onNavigate }) {
             >
               Locations
             </a>
+            {siteConfig.cateringUrl ? (
+              <a
+                className="header-nav-link header-nav-catering"
+                href={siteConfig.cateringUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Catering
+              </a>
+            ) : null}
           </nav>
           <div className="header-cta-group">
             {siteConfig.cateringUrl ? (
