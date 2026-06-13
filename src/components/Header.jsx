@@ -69,16 +69,6 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
           className={`header-nav-cluster${isMobileMenuOpen ? ' header-nav-cluster--open' : ''}`}
           style={{ '--order-dock-progress': mobileOrderDockProgress }}
         >
-          <button
-            className="header-menu-toggle"
-            type="button"
-            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="header-primary-nav"
-            onClick={() => setIsMobileMenuOpen((previous) => !previous)}
-          >
-            <span aria-hidden="true">{isMobileMenuOpen ? '✕' : '☰'}</span>
-          </button>
           <nav className="header-nav" id="header-primary-nav" aria-label="Primary">
             <a
               className="header-nav-link"
@@ -106,27 +96,39 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
               </a>
             ) : null}
           </nav>
-          <div
-            className="header-cta-group"
-            aria-hidden={mobileOrderDockProgress < 0.35}
-            style={{ pointerEvents: mobileOrderDockProgress > 0.35 ? 'auto' : 'none' }}
-          >
-            {siteConfig.cateringUrl ? (
-              <a
-                className="catering-link"
-                href={siteConfig.cateringUrl}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Catering
-              </a>
-            ) : null}
-            <OrderDropdown
-              label="Order Online"
-              className="order-link"
-              onSelect={() => setIsMobileMenuOpen(false)}
-            />
+          <div className="header-nav-actions">
+            <div
+              className="header-cta-group"
+              aria-hidden={mobileOrderDockProgress < 0.35}
+              style={{ pointerEvents: mobileOrderDockProgress > 0.35 ? 'auto' : 'none' }}
+            >
+              {siteConfig.cateringUrl ? (
+                <a
+                  className="catering-link"
+                  href={siteConfig.cateringUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Catering
+                </a>
+              ) : null}
+              <OrderDropdown
+                label="Order Online"
+                className="order-link"
+                onSelect={() => setIsMobileMenuOpen(false)}
+              />
+            </div>
+            <button
+              className="header-menu-toggle"
+              type="button"
+              aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="header-primary-nav"
+              onClick={() => setIsMobileMenuOpen((previous) => !previous)}
+            >
+              <span aria-hidden="true">{isMobileMenuOpen ? '✕' : '☰'}</span>
+            </button>
           </div>
         </div>
       </div>
