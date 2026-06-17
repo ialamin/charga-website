@@ -1,3 +1,4 @@
+import { trackCtaClick } from '../analytics.js'
 import siteConfig from '../siteConfig'
 import {
   getLocationMenuHref,
@@ -74,6 +75,14 @@ function Locations({ onNavigate }) {
                   href={getLocationOrderUrl(location.id)}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() =>
+                    trackCtaClick({
+                      type: 'order',
+                      placement: 'locations',
+                      locationId: location.id,
+                      linkUrl: getLocationOrderUrl(location.id),
+                    })
+                  }
                 >
                   {location.orderLabel}
                 </a>

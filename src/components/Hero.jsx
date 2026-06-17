@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { trackCtaClick } from '../analytics.js'
 import siteConfig from '../siteConfig'
 import OrderDropdown from './OrderDropdown.jsx'
 
@@ -67,13 +68,20 @@ function Hero({ onMobileOrderDockProgressChange }) {
       <div className="hero-content">
         <h1 className="hero-title">{siteConfig.heroTitle}</h1>
         <div className="hero-actions" ref={actionsRef}>
-          <OrderDropdown label="Order Online" className="hero-primary" />
+          <OrderDropdown label="Order Online" className="hero-primary" placement="hero" />
           {siteConfig.cateringUrl ? (
             <a
               className="hero-secondary-button"
               href={siteConfig.cateringUrl}
               target="_blank"
               rel="noreferrer"
+              onClick={() =>
+                trackCtaClick({
+                  type: 'catering',
+                  placement: 'hero',
+                  linkUrl: siteConfig.cateringUrl,
+                })
+              }
             >
               Catering
             </a>

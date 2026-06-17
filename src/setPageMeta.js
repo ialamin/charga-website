@@ -1,11 +1,11 @@
 import siteConfig from './siteConfig'
 
-export function setPageMeta() {
-  document.title = siteConfig.pageTitle
+export function setPageMeta(overrides = {}) {
+  document.title = overrides.pageTitle ?? siteConfig.pageTitle
 
   const descriptionMeta = document.querySelector('meta[name="description"]')
   if (descriptionMeta) {
-    descriptionMeta.setAttribute('content', siteConfig.metaDescription)
+    descriptionMeta.setAttribute('content', overrides.metaDescription ?? siteConfig.metaDescription)
   }
 
   const faviconLink = document.querySelector('link[rel="icon"]')

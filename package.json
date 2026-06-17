@@ -7,9 +7,9 @@
     "dev": "vite --mode pike",
     "dev:pike": "vite --mode pike",
     "dev:grill": "vite --mode grill",
-    "build": "vite build --mode pike",
-    "build:pike": "vite build --mode pike",
-    "build:grill": "vite build --mode grill",
+    "build": "vite build --mode pike && node scripts/generate-sitemap.mjs pike",
+    "build:pike": "vite build --mode pike && node scripts/generate-sitemap.mjs pike",
+    "build:grill": "vite build --mode grill && node scripts/generate-sitemap.mjs grill",
     "lint": "eslint .",
     "preview": "vite preview"
   },

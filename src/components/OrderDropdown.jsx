@@ -1,10 +1,12 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import { trackCtaClick } from '../analytics.js'
 import { orderOptions } from '../locations'
 
 function OrderDropdown({
   label = 'Order Online',
   shortLabel = 'Order',
   className = 'order-link',
+  placement = 'unknown',
   onSelect,
 }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,7 +43,13 @@ function OrderDropdown({
     }
   }, [isOpen])
 
-  const handleOptionClick = () => {
+  const handleOptionClick = (option) => {
+    trackCtaClick({
+      type: 'order',
+      placement,
+      locationId: option.id,
+      linkUrl: option.orderUrl,
+    })
     setOpen(false)
     onSelect?.()
   }
@@ -78,7 +86,7 @@ function OrderDropdown({
                 target="_blank"
                 rel="noreferrer"
                 role="option"
-                onClick={handleOptionClick}
+                onClick={() => handleOptionClick(option)}
               >
                 {option.label}
               </a>

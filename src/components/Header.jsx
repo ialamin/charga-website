@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { trackCtaClick } from '../analytics.js'
 import siteConfig from '../siteConfig'
 import OrderDropdown from './OrderDropdown.jsx'
 
@@ -90,7 +91,14 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
                 href={siteConfig.cateringUrl}
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  trackCtaClick({
+                    type: 'catering',
+                    placement: 'header_nav',
+                    linkUrl: siteConfig.cateringUrl,
+                  })
+                }}
               >
                 Catering
               </a>
@@ -108,7 +116,14 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
                   href={siteConfig.cateringUrl}
                   target="_blank"
                   rel="noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    trackCtaClick({
+                      type: 'catering',
+                      placement: 'header',
+                      linkUrl: siteConfig.cateringUrl,
+                    })
+                  }}
                 >
                   Catering
                 </a>
@@ -116,6 +131,7 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
               <OrderDropdown
                 label="Order Online"
                 className="order-link"
+                placement="header"
                 onSelect={() => setIsMobileMenuOpen(false)}
               />
             </div>

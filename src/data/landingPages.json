@@ -1,0 +1,248 @@
+{
+  "site": {
+    "name": "Charga On The Pike",
+    "brand": "Charga",
+    "streetAddress": "3203 Columbia Pike",
+    "addressLocality": "Arlington",
+    "addressRegion": "VA",
+    "postalCode": "22204",
+    "telephone": "(703) 574-5050",
+    "url": "https://chargaonthepike.com",
+    "servesCuisine": ["Pakistani", "Indian", "Halal", "Street Food"],
+    "serviceAreaLabels": [
+      "Arlington",
+      "Falls Church",
+      "Alexandria",
+      "Clarendon",
+      "Ballston"
+    ]
+  },
+  "pages": [
+    {
+      "slug": "arlington",
+      "type": "city",
+      "shellTheme": "yellow",
+      "pageTitle": "Halal Food in Arlington, VA | Charga On The Pike",
+      "metaDescription": "Looking for halal food in Arlington? Charga On The Pike serves kabobs, sandwiches, momos, burgers, and Pakistani & Indian favorites on Columbia Pike.",
+      "h1": "Halal Food in Arlington, VA",
+      "intro": "If you're looking for halal food in Arlington, you have options. What makes Charga different is the variety—and the recognition. Named Best Casual Restaurant by The Washington Post, we're the kind of neighborhood spot where you can stop in for kabobs, a chopped cheese, chili momos, a burger, or a full platter without feeling locked into one type of meal.",
+      "sections": [
+        {
+          "heading": "A Local Favorite on Columbia Pike",
+          "body": "Charga On The Pike is at 3203 Columbia Pike, Arlington, VA 22204—right on Columbia Pike, making it an easy stop whether you're coming from work, heading home, or looking for takeout. Our menu brings together Pakistani and Indian street food, halal comfort food, and some American classics that have become customer favorites."
+        },
+        {
+          "heading": "More Than Just Kabobs",
+          "body": "Many people discover us because of our halal kabobs, but they stay for the variety. Steak n Cheese sandwiches, chopped cheese, chili momos, chicken platters, burgers, and tandoori specialties all share the menu. Whether you're ordering for yourself or a group with different cravings, there's usually something for everyone."
+        }
+      ],
+      "areaServed": ["Arlington, VA"],
+      "relatedSlugs": ["falls-church", "clarendon", "halal-kabobs"]
+    },
+    {
+      "slug": "falls-church",
+      "type": "city",
+      "pageTitle": "Halal Food Near Falls Church, VA | Charga",
+      "metaDescription": "Just minutes from Falls Church, Charga On The Pike serves halal kabobs, sandwiches, momos, burgers, and Pakistani & Indian favorites.",
+      "h1": "Halal Food Near Falls Church",
+      "intro": "If you're near Falls Church and looking for halal food worth the short drive, Charga On The Pike is right down Columbia Pike. We're close enough for a quick pickup and different enough to keep people coming back.",
+      "sections": [
+        {
+          "heading": "Worth Leaving the Usual Rotation",
+          "body": "Everyone has a few regular takeout spots. Charga has become one of those places for many Falls Church customers—named Best Casual Restaurant by The Washington Post—because the menu offers something beyond the standard choices. From chicken tikka and lamb tikka to chopped cheese and chili momos, there's always something new to try."
+        },
+        {
+          "heading": "Easy Takeout and Delivery",
+          "body": "Whether you're heading home from work or ordering dinner for the family, online ordering makes pickup simple. Visit us at 3203 Columbia Pike, Arlington, VA 22204, or order for delivery. Many of our customers from Falls Church come for the kabobs and platters but end up discovering sandwiches, burgers, and other favorites along the way."
+        }
+      ],
+      "areaServed": ["Falls Church, VA"],
+      "relatedSlugs": ["arlington", "ballston", "halal-kabobs"]
+    },
+    {
+      "slug": "alexandria",
+      "type": "city",
+      "shellTheme": "yellow",
+      "pageTitle": "Halal Takeout Near Alexandria, VA | Charga",
+      "metaDescription": "Looking for halal takeout near Alexandria? Charga On The Pike serves kabobs, sandwiches, momos, burgers, and Pakistani & Indian street food.",
+      "h1": "Halal Takeout Near Alexandria",
+      "intro": "Alexandria has plenty of food options, but sometimes you're looking for something different. Charga On The Pike offers halal takeout that's built around variety, generous portions, and food people genuinely get excited about.",
+      "sections": [
+        {
+          "heading": "A Short Trip for Big Flavor",
+          "body": "Find us at 3203 Columbia Pike, Arlington, VA 22204. Charga is an easy drive from Alexandria, and customers make the trip for everything from chicken tandoori and beef seekh kabobs to Steak n Cheese sandwiches and our popular chili momos."
+        },
+        {
+          "heading": "Takeout That Travels Well",
+          "body": "Whether you're picking up dinner on the way home or ordering delivery, many of our most popular items hold up exceptionally well. Kabob platters, sandwiches, burgers, and momos all make great takeout options when you're craving something beyond the usual chain restaurant meal."
+        }
+      ],
+      "areaServed": ["Alexandria, VA"],
+      "relatedSlugs": ["arlington", "falls-church", "steak-n-cheese"]
+    },
+    {
+      "slug": "clarendon",
+      "type": "neighborhood",
+      "pageTitle": "Halal Food Near Clarendon | Charga On The Pike",
+      "metaDescription": "Looking for halal food near Clarendon? Charga On The Pike serves kabobs, sandwiches, burgers, and Pakistani & Indian favorites just minutes away.",
+      "h1": "Halal Food Near Clarendon",
+      "intro": "If you're in Clarendon and looking for halal food beyond the usual options, Charga On The Pike is a short drive away at 3203 Columbia Pike, Arlington, VA 22204.",
+      "sections": [
+        {
+          "heading": "Close Enough for Lunch or Dinner",
+          "body": "Many Clarendon customers stop by our Columbia Pike location for a quick lunch, an easy takeout dinner, or a late craving. The menu ranges from traditional halal favorites like chicken tikka and lamb tikka to sandwiches like the Steak n Cheese and chopped cheese."
+        },
+        {
+          "heading": "Something Different From the Usual",
+          "body": "Clarendon has no shortage of restaurants. What makes Charga stand out is the combination of Pakistani and Indian street food, halal comfort food, and familiar favorites under one roof. It's the kind of place where everyone in the group can find something they'll enjoy."
+        }
+      ],
+      "areaServed": ["Clarendon, Arlington, VA"],
+      "relatedSlugs": ["arlington", "ballston", "chopped-cheese"]
+    },
+    {
+      "slug": "ballston",
+      "type": "neighborhood",
+      "shellTheme": "yellow",
+      "pageTitle": "Halal Food Near Ballston | Charga On The Pike",
+      "metaDescription": "Searching for halal food near Ballston? Visit Charga On The Pike for kabobs, burgers, sandwiches, momos, and more.",
+      "h1": "Halal Food Near Ballston",
+      "intro": "For Ballston residents looking for halal food, Charga offers a menu that goes well beyond a typical kabob shop. It's a place where you can order exactly what you're in the mood for.",
+      "sections": [
+        {
+          "heading": "From Kabobs to Chopped Cheese",
+          "body": "Some customers come specifically for chicken tikka or beef seekh. Others come for a halal chopped cheese or Steak n Cheese. The menu gives you the flexibility to order traditional favorites one day and something completely different the next."
+        },
+        {
+          "heading": "A Columbia Pike Staple",
+          "body": "Find us at 3203 Columbia Pike, Arlington, VA 22204. Charga has become a regular stop for many customers throughout Arlington. Whether you're grabbing dinner after work or picking up food for the family, online ordering makes the process quick and easy."
+        }
+      ],
+      "areaServed": ["Ballston, Arlington, VA"],
+      "relatedSlugs": ["clarendon", "arlington", "halal-kabobs"]
+    },
+    {
+      "slug": "not-smashed-burger",
+      "type": "food",
+      "pageTitle": "Not a Smash Burger | Halal Burgers in Arlington",
+      "metaDescription": "Looking for a burger that's bigger than a smash burger? Try Charga's halal Angus and House Burgers on Columbia Pike.",
+      "h1": "Not a Smash Burger. A Different Kind of Burger.",
+      "intro": "Smash burgers have their fans. We get it. But sometimes you want something thicker, juicier, and built to be a full meal. That's where our burgers come in.",
+      "sections": [
+        {
+          "heading": "For People Who Want a Real Burger",
+          "body": "Our Angus Burger and House Burger take a different approach. Instead of thin patties pressed flat, they're built around the idea that a burger should be substantial. If you're looking for something with a little more bite and a little more heft, you've come to the right place."
+        },
+        {
+          "heading": "100% Halal, No Compromises",
+          "body": "Finding a great halal burger isn't always easy. That's one reason these burgers have become favorites among regulars. Whether you're specifically searching for a halal burger in Arlington or simply looking for a burger that feels more satisfying than the latest trend, they're worth a try."
+        }
+      ],
+      "areaServed": ["Arlington, VA", "Falls Church, VA", "Alexandria, VA"],
+      "relatedSlugs": ["chicken-sandwiches", "steak-n-cheese", "arlington"]
+    },
+    {
+      "slug": "chicken-sandwiches",
+      "type": "food",
+      "shellTheme": "yellow",
+      "pageTitle": "Chicken Sandwiches in Arlington, VA | Charga",
+      "metaDescription": "From crispy chicken to grilled chicken, Charga serves halal chicken sandwiches on Columbia Pike in Arlington.",
+      "h1": "Chicken Sandwiches in Arlington",
+      "intro": "Not every chicken sandwich is trying to be the same thing. Sometimes you want something crispy. Other times you want something grilled. That's why we offer both.",
+      "sections": [
+        {
+          "heading": "Crispy or Grilled? Depends on the Day.",
+          "body": "Our Crispy Chicken Sandwich is available in both regular and Nashville hot versions for people who like a little heat. If you're looking for something lighter, the Grilled Chicken Sandwich delivers plenty of flavor without the crunch. Different sandwiches, different cravings, same goal: a meal you'll actually enjoy."
+        },
+        {
+          "heading": "A Halal Option That Doesn't Feel Like a Compromise",
+          "body": "Many people searching for a halal chicken sandwich end up settling for whatever they can find. We think you should be able to choose based on what sounds good, not what's available. Whether you're in the mood for crispy chicken or grilled chicken, you'll find both here."
+        }
+      ],
+      "areaServed": ["Arlington, VA", "Falls Church, VA", "Alexandria, VA"],
+      "relatedSlugs": ["not-smashed-burger", "steak-n-cheese", "arlington"]
+    },
+    {
+      "slug": "steak-n-cheese",
+      "type": "food",
+      "pageTitle": "Halal Steak and Cheese in Arlington, VA | Charga",
+      "metaDescription": "Looking for a halal steak and cheese in Arlington? Charga serves one of its most popular sandwiches on Columbia Pike.",
+      "h1": "Halal Steak and Cheese in Arlington",
+      "intro": "Some sandwiches become customer favorites for a reason. The Steak n Cheese has been one of Charga's top sellers for years because it delivers exactly what people want: tender steak, melted cheese, and a sandwich that's satisfying from the first bite to the last.",
+      "sections": [
+        {
+          "heading": "A Local Favorite on Columbia Pike",
+          "body": "Whether you call it a steak and cheese, cheesesteak, or Philly-style sandwich, people are usually looking for the same thing: plenty of steak, plenty of flavor, and no shortcuts. Our halal Steak n Cheese has become one of the most ordered items on the menu because it consistently delivers on all three."
+        },
+        {
+          "heading": "Made for Real Appetites",
+          "body": "This isn't the kind of sandwich that leaves you hunting for a second meal an hour later. It's hearty, filling, and built for lunch, dinner, or whenever a salad just isn't going to cut it. If you're searching for a halal cheesesteak in Arlington, this is one of the first things we'd recommend."
+        }
+      ],
+      "areaServed": ["Arlington, VA", "Falls Church, VA", "Alexandria, VA"],
+      "relatedSlugs": ["chopped-cheese", "chicken-sandwiches", "arlington"]
+    },
+    {
+      "slug": "chopped-cheese",
+      "type": "food",
+      "shellTheme": "yellow",
+      "pageTitle": "Halal Chopped Cheese in Arlington, VA | Charga",
+      "metaDescription": "Try Charga's halal chopped cheese on Columbia Pike. A New York favorite made with 100% halal ingredients.",
+      "h1": "Halal Chopped Cheese in Arlington",
+      "intro": "A good chopped cheese doesn't need much explaining. Seasoned beef, melted cheese, fresh toppings, and the right bread. The challenge is finding one made with 100% halal ingredients. That's where Charga comes in.",
+      "sections": [
+        {
+          "heading": "A New York Classic, Made Halal",
+          "body": "The chopped cheese has earned a loyal following because it does the basics exceptionally well. We keep that same spirit while making it accessible to halal diners. It's simple, satisfying, and one of those sandwiches people end up craving long after they've finished it."
+        },
+        {
+          "heading": "More Than a Trend",
+          "body": "Plenty of people come in curious about the chopped cheese because they've seen it online. Many end up ordering it again because it actually lives up to the hype. If you've been searching for a halal chopped cheese in Arlington, this is one of the few places where you can find one done right."
+        }
+      ],
+      "areaServed": ["Arlington, VA", "Falls Church, VA", "Alexandria, VA"],
+      "relatedSlugs": ["steak-n-cheese", "chicken-sandwiches", "arlington"]
+    },
+    {
+      "slug": "halal-kabobs",
+      "type": "food",
+      "pageTitle": "Halal Kabobs in Arlington, VA | Charga On The Pike",
+      "metaDescription": "Looking for halal kabobs in Arlington? Enjoy chicken tikka, beef seekh, lamb tikka, paneer, salmon, and more at Charga.",
+      "h1": "Halal Kabobs in Arlington",
+      "intro": "If it's your first visit to Charga, there's a good chance someone will tell you to try the kabobs. They're the foundation of the menu and one of the main reasons people continue coming back.",
+      "sections": [
+        {
+          "heading": "Built Around Choice",
+          "body": "Not everyone wants the same thing, which is why our kabob selection includes chicken tikka, chicken tandoori, beef seekh, lamb tikka, jerk kabob, paneer, and salmon. Whether you're ordering for yourself or sharing with family and friends, it's easy to mix and match different favorites."
+        },
+        {
+          "heading": "A Meal That Feels Complete",
+          "body": "A great kabob platter isn't just about the protein. It's about putting together a meal that leaves you satisfied. Our platters have become popular with regulars because they're filling, dependable, and work just as well for a quick lunch as they do for a full dinner."
+        }
+      ],
+      "areaServed": ["Arlington, VA", "Falls Church, VA", "Alexandria, VA"],
+      "relatedSlugs": ["arlington", "falls-church", "jerk-chicken"]
+    },
+    {
+      "slug": "jerk-chicken",
+      "type": "food",
+      "shellTheme": "yellow",
+      "pageTitle": "Halal Jerk Chicken in Arlington, VA | Charga",
+      "metaDescription": "Looking for jerk chicken in Arlington? Try Charga's halal jerk kabob skewers, a customer favorite on Columbia Pike.",
+      "h1": "Halal Jerk Chicken in Arlington",
+      "intro": "When people search for jerk chicken, they're usually looking for bold flavor. That's exactly why our jerk kabob has developed such a loyal following.",
+      "sections": [
+        {
+          "heading": "A Different Take on Jerk Chicken",
+          "body": "Our jerk chicken is served as boneless jerk kabob skewers, making it easy to eat whether you're dining in, picking up takeout, or ordering delivery. The result is all the flavor people expect from jerk chicken in a format that travels exceptionally well."
+        },
+        {
+          "heading": "One of the Menu's Hidden Gems",
+          "body": "Some customers discover the jerk kabob by accident and end up ordering it every visit afterward. It doesn't always get the same attention as chicken tikka or beef seekh, but many regulars consider it one of the most underrated items on the menu. If you're looking for halal jerk chicken in Arlington, it's a great place to start."
+        }
+      ],
+      "areaServed": ["Arlington, VA", "Falls Church, VA", "Alexandria, VA"],
+      "relatedSlugs": ["halal-kabobs", "chicken-sandwiches", "arlington"]
+    }
+  ]
+}
