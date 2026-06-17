@@ -1,1 +1,2 @@
 VITE_SITE=pike
+VITE_ENABLE_SEO_PAGES=true
