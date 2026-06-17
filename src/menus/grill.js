@@ -90,7 +90,7 @@ export const menuSections = [
     title: 'Starters',
     navLabel: 'Starters',
     items: [
-      { name: 'Samosa (1)', price: '$1.25' },
+      { name: 'Samosa (1)', price: '$2' },
       { name: 'Samosa (5)', price: '$6' },
       { name: 'Samosa (10)', price: '$10' },
       { name: 'Samosa (15)', price: '$15' },
