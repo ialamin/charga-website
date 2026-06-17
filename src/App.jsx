@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { trackPageView } from './analytics.js'
-import { getLandingPageBySlug } from './data/landingPages.js'
+import { getLandingPageBySlug, areSeoPagesEnabled } from './data/landingPages.js'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import MenuHighlights from './components/MenuHighlights.jsx'
@@ -12,11 +12,17 @@ import Menu from './pages/Menu.jsx'
 import Locations from './pages/Locations.jsx'
 import About from './pages/About.jsx'
 import SeoLandingPage from './pages/SeoLandingPage.jsx'
+import SeoPageIndex from './pages/SeoPageIndex.jsx'
+
+const SEO_PAGE_INDEX_PATH = '/seo-page'
 
 function parsePath(path) {
   if (path === '/menu') return { page: 'menu', slug: null }
   if (path === '/locations') return { page: 'locations', slug: null }
   if (path === '/about') return { page: 'about', slug: null }
+  if (path === SEO_PAGE_INDEX_PATH && areSeoPagesEnabled()) {
+    return { page: 'seo-index', slug: null }
+  }
 
   const slug = path.replace(/^\/|\/$/g, '')
   if (slug && getLandingPageBySlug(slug)) {
@@ -30,6 +36,7 @@ function getPathFromRoute({ page, slug }) {
   if (page === 'menu') return '/menu'
   if (page === 'locations') return '/locations'
   if (page === 'about') return '/about'
+  if (page === 'seo-index') return SEO_PAGE_INDEX_PATH
   if (page === 'seo' && slug) return `/${slug}`
   return '/'
 }
@@ -87,6 +94,8 @@ function App() {
           <Menu />
         ) : route.page === 'locations' ? (
           <Locations onNavigate={handleNavigate} />
+        ) : route.page === 'seo-index' ? (
+          <SeoPageIndex onNavigate={handleNavigate} />
         ) : route.page === 'seo' ? (
           <SeoLandingPage slug={route.slug} onNavigate={handleNavigate} />
         ) : (

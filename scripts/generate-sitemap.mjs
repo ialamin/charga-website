@@ -34,7 +34,7 @@ ${urlEntries}
 
 const robots = `User-agent: *
 Allow: /
-
+${site === 'pike' ? 'Disallow: /seo-page\n' : ''}
 Sitemap: ${baseUrl}/sitemap.xml
 `
 
