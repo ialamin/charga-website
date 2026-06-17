@@ -5,7 +5,6 @@ import {
   getLandingPageBySlug,
   getLandingPagePath,
 } from '../data/landingPages.js'
-import { PIKE_ORDER_URL } from '../constants'
 import { applyLandingPageSchema, removeLandingPageSchema } from '../lib/seoSchema.js'
 import { setPageMeta } from '../setPageMeta.js'
 import OrderDropdown from '../components/OrderDropdown.jsx'
@@ -64,9 +63,6 @@ function SeoLandingPage({ slug, onNavigate }) {
         <p className="seo-landing-lead">{page.intro}</p>
         <div className="seo-landing-actions">
           <OrderDropdown label="Order Online" className="hero-primary" placement={`seo_${page.slug}`} />
-          <a className="seo-landing-secondary-button" href={PIKE_ORDER_URL} target="_blank" rel="noreferrer">
-            Order on Toast
-          </a>
           <button type="button" className="seo-landing-text-link" onClick={() => onNavigate?.('menu', '/menu')}>
             View full menu
           </button>
