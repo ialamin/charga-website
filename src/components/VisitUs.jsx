@@ -31,7 +31,7 @@ function VisitUs() {
           </div>
           <iframe
             className="visit-us-map"
-            title="Map to Charga in Arlington, VA"
+            title={`Map to ${siteConfig.footerBrand} in Arlington, VA`}
             src={`https://www.google.com/maps?q=${visitUs.mapQuery}&output=embed`}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

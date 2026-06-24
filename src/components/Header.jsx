@@ -6,7 +6,7 @@ import OrderDropdown from './OrderDropdown.jsx'
 const SCROLL_COMPACT_THRESHOLD = 48
 const MOBILE_NAV_BREAKPOINT = 900
 
-function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
+function Header({ onNavigate, mobileOrderDockProgress = 1, showOrderCta = true }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isCompact, setIsCompact] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -43,6 +43,17 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [isMobileMenuOpen])
+
   const handleNavClick = (event, page, path) => {
     event.preventDefault()
     setIsMobileMenuOpen(false)
@@ -50,7 +61,16 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
   }
 
   return (
-    <header
+    <>
+      {isMobileMenuOpen ? (
+        <button
+          type="button"
+          className="header-nav-backdrop"
+          aria-label="Close navigation menu"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      ) : null}
+      <header
       className={`site-header${isScrolled ? ' site-header--scrolled' : ''}${isCompact ? ' site-header--compact' : ''}`}
     >
       <div className="site-header-inner">
@@ -128,27 +148,34 @@ function Header({ onNavigate, mobileOrderDockProgress = 1 }) {
                   Catering
                 </a>
               ) : null}
-              <OrderDropdown
-                label="Order Online"
-                className="order-link"
-                placement="header"
-                onSelect={() => setIsMobileMenuOpen(false)}
-              />
+              {showOrderCta ? (
+                <OrderDropdown
+                  label="Order Online"
+                  className="order-link"
+                  placement="header"
+                  onSelect={() => setIsMobileMenuOpen(false)}
+                />
+              ) : null}
             </div>
             <button
-              className="header-menu-toggle"
+              className={`header-menu-toggle${isMobileMenuOpen ? ' header-menu-toggle--open' : ''}`}
               type="button"
               aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={isMobileMenuOpen}
               aria-controls="header-primary-nav"
               onClick={() => setIsMobileMenuOpen((previous) => !previous)}
             >
-              <span aria-hidden="true">{isMobileMenuOpen ? '✕' : '☰'}</span>
+              <span className="header-menu-toggle-icon" aria-hidden="true">
+                <span className="header-menu-toggle-bar" />
+                <span className="header-menu-toggle-bar" />
+                <span className="header-menu-toggle-bar" />
+              </span>
             </button>
           </div>
         </div>
       </div>
     </header>
+    </>
   )
 }
 

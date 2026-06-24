@@ -45,6 +45,7 @@ function App() {
   const [route, setRoute] = useState(() => parsePath(window.location.pathname))
   const [mobileOrderDockProgress, setMobileOrderDockProgress] = useState(0)
   const isHome = route.page === 'home'
+  const isSeoIndex = route.page === 'seo-index'
 
   const handleNavigate = (page, path) => {
     const nextRoute = page
@@ -80,6 +81,7 @@ function App() {
       <Header
         onNavigate={handleNavigate}
         mobileOrderDockProgress={isHome ? mobileOrderDockProgress : 1}
+        showOrderCta={!isSeoIndex}
       />
       <main>
         {route.page === 'home' ? (
@@ -102,7 +104,7 @@ function App() {
           <About />
         )}
       </main>
-      <Footer onNavigate={handleNavigate} />
+      <Footer onNavigate={handleNavigate} showOrderCta={!isSeoIndex} />
     </>
   )
 }

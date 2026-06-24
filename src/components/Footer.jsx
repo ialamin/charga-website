@@ -2,7 +2,7 @@ import { trackCtaClick } from '../analytics.js'
 import siteConfig from '../siteConfig'
 import OrderDropdown from './OrderDropdown.jsx'
 
-function Footer({ onNavigate }) {
+function Footer({ onNavigate, showOrderCta = true }) {
   return (
     <footer className="site-footer">
       <p className="footer-brand">{siteConfig.footerBrand}</p>
@@ -21,7 +21,9 @@ function Footer({ onNavigate }) {
         <button type="button" className="footer-link-button" onClick={() => onNavigate?.('about')}>
           About
         </button>
-        <OrderDropdown label="Order" className="footer-link-button" placement="footer" />
+        {showOrderCta ? (
+          <OrderDropdown label="Order" className="footer-link-button" placement="footer" />
+        ) : null}
         {siteConfig.cateringUrl ? (
           <a
             className="footer-link-anchor"

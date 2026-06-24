@@ -65,7 +65,11 @@ function Hero({ onMobileOrderDockProgressChange }) {
         '--hero-position': siteConfig.heroImagePosition,
       }}
     >
+      <p className="visually-hidden">{siteConfig.heroImageAlt}</p>
       <div className="hero-content">
+        {siteConfig.heroEyebrow ? (
+          <p className="hero-eyebrow">{siteConfig.heroEyebrow}</p>
+        ) : null}
         <h1 className="hero-title">{siteConfig.heroTitle}</h1>
         <div className="hero-actions" ref={actionsRef}>
           <OrderDropdown label="Order Online" className="hero-primary" placement="hero" />
